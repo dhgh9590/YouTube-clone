@@ -1,0 +1,45 @@
+.play_list {
+    width: 100%;
+}
+
+.play_list>h2 {
+    width: 100%;
+    height: 55px;
+    padding-left: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 55px;
+    color: #fff;
+    background: #0e0e11;
+    box-sizing: border-box;
+}
+
+.play_list ul {
+    padding: 15px 0;
+    box-sizing: border-box;
+}
+
+.play_list ul li {
+    padding: 15px 0;
+    cursor: pointer;
+    transition: all 0.4s;
+    position: relative;
+}
+
+.play_list ul li:hover {
+    transform: translateX(3px);
+}
+
+.play_list ul li .menu {
+    font-size: 18px;
+    color: #fff;
+}
+
+.play_list ul li .menu .menu_icon {
+    margin-left: 50px;
+}
+
+.play_list ul li .menu em {
+    margin-left: 15px;
+    font-weight: 400;
+}

@@ -1,0 +1,50 @@
+.menu_list {
+    width: 100%;
+}
+
+.menu_list>h2 {
+    width: 100%;
+    height: 55px;
+    padding-left: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 55px;
+    color: #fff;
+    background: #0e0e11;
+    box-sizing: border-box;
+}
+
+.menu_list ul {
+    padding: 15px 0;
+    box-sizing: border-box;
+}
+
+.menu_list ul li {
+    padding: 15px 0;
+    cursor: pointer;
+    transition: all 0.4s;
+    position: relative;
+}
+
+.menu_list ul li:hover {
+    transform: translateX(3px);
+}
+
+.menu_list ul li .menu {
+    font-size: 18px;
+    color: #fff;
+    transition: all 0.4s;
+}
+
+.menu_list ul li:hover .menu {
+    color: #ccc;
+}
+
+.menu_list ul li .menu .menu_icon {
+    margin-left: 50px;
+}
+
+.menu_list ul li .menu em {
+    margin-left: 15px;
+    font-weight: 400;
+}
