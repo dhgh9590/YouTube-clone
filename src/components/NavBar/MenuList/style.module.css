@@ -48,3 +48,12 @@
     margin-left: 15px;
     font-weight: 400;
 }
+
+@media (max-width:920px) {
+    .menu_list>h2 {
+            padding-left: 20px;
+        }
+    .menu_list ul li .menu .menu_icon {
+            margin-left: 20px;
+        }
+}

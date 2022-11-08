@@ -34,6 +34,11 @@
     font-size: 18px;
     color: #fff;
 }
+.play_list ul li .menu {
+    font-size: 18px;
+    color: #fff;
+    transition: all 0.4s;
+}
 
 .play_list ul li .menu .menu_icon {
     margin-left: 50px;
@@ -42,4 +47,14 @@
 .play_list ul li .menu em {
     margin-left: 15px;
     font-weight: 400;
+}
+
+@media (max-width:920px) {
+    .play_list>h2 {
+        padding-left: 20px;
+    }
+
+    .play_list ul li .menu .menu_icon {
+        margin-left: 20px;
+    }
 }
