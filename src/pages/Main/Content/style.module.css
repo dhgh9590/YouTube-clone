@@ -1,6 +1,11 @@
 .content{width: 100%;height: 100%; background: #555;}
 .target_item{width: 100%;height: 100%; position: relative;}
 
+.form{position: absolute; top: 50px;left: 40px;}
+.form input{max-width: 300px; width: 300px; padding: 5px 0; font-size: 14px; box-sizing: border-box; background: none; border: none; border-bottom: 1px solid rgba(255, 255, 255, 0.3); color: rgba(255, 255, 255, 0.5); outline: none;}
+.form button{width: 25px;height: 25px; position: absolute;top: 50%;right: 0;transform: translateY(-50%); background: none; cursor: pointer;}
+.form .icon{ color: #fff;}
+
 .target_img{width: 100%; height: 100%; background: url(/public/images/test.jpg)no-repeat center; background-size: cover; background-color: #0005; background-blend-mode: darken;}
 
 .target_text{position: absolute; top: 25%;left: 40px;}

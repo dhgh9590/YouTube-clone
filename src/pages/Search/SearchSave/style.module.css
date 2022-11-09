@@ -1,0 +1,44 @@
+.container{min-width: 300px;background: #222635;position: relative;}
+.toggle{display: none;}
+
+.logo{width: 100%;height: 100px; box-sizing: border-box;  display: flex; justify-content: center; align-items: center;}
+
+.form{width: 100%; height: 55px; background: #2e3245; padding: 0 50px; box-sizing: border-box; display: flex; align-items: center; position: relative;}
+.form input{ width: 100%;height: 30px; padding: 5px 40px 5px 0; box-sizing: border-box; background: none; border: none; outline: none; font-size: 14px; color: rgba(255, 255, 255, 0.5);}
+.form button{width: 25px;height: 25px; background: none;cursor: pointer; position: absolute; top: 50%;right: 41px; transform: translateY(-50%); color: rgba(255, 255, 255, 0.5);}
+
+.save_keyword{  padding: 0 50px; box-sizing: border-box; overflow-y: auto;}
+.save_keyword ul{}
+.save_keyword ul li{padding: 10px 0; display: flex; justify-content: space-between; align-items: center;}
+.save_keyword ul li em{width: 90%; font-size: 14px; color: #fff; cursor: pointer;}
+.save_keyword ul li .icon{font-size: 14px; color: #fff; cursor: pointer;}
+
+@media (max-width : 1170px) {
+    .container { min-width: 250px;}
+    .form{padding: 25px;}
+    .form button{right: 17px;}
+    .save_keyword {padding: 0 25px;}
+}
+
+@media (max-width : 840px) {
+    .container{margin-left: -250px; height: 100%; position: fixed; top: 0;left: 0; transition: all 0.5s; background: rgba(34, 38, 53, 0.8); backdrop-filter: blur(5px) ;}
+    .container.active{margin-left: 0;}
+    .toggle {display: block;width: 40px;height: 40px;position: absolute;top: 0;right: -40px;font-size: 20px; background: rgba(34, 38, 53, 0.8);backdrop-filter: blur(5px) ;display: flex;justify-content: center;align-items: center; color: #fff;}
+}
+
+/* 스크롤바 설정*/
+.save_keyword::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* 스크롤바 막대 설정*/
+.save_keyword::-webkit-scrollbar-thumb {
+    background: linear-gradient(#f64435, #ffe498);
+    border-radius: 25px;
+}
+
+/* 스크롤바 뒷 배경 설정*/
+.save_keyword::-webkit-scrollbar-track {
+    background-color: #575757;
+}
+

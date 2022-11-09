@@ -2,7 +2,12 @@
 
 export const BASE_URL = 'https://youtube.googleapis.com';
 
-export const API_KEY = `AIzaSyBCMmMtsNY4GfZq03FvBfFHjcOekQIpfjg`;
+//AIzaSyCq7qIbTpxvjHOUd6uyzrTVvJvjJRNvuYY
+//AIzaSyBCMmMtsNY4GfZq03FvBfFHjcOekQIpfjg
+//AIzaSyBMfXHcrQEMtbJzWZV-_OWlIkAa7CWpmV0
+//AIzaSyBjJYNDi1DhwgUgFEj9k1UKl3o3gD4RDZI
+//AIzaSyCjhAAhJy7OHCU-9ixcnVVMjXWlirj4iaE
+export const API_KEY = `AIzaSyCjhAAhJy7OHCU-9ixcnVVMjXWlirj4iaE`;
 
 export const USER_URL = {
   LOGIN: '/auth/signin',
