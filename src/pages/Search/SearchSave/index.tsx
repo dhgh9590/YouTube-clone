@@ -88,6 +88,7 @@ const Index = () => {
             localStorage.setItem('search', JSON.stringify(input));
             setSearch(input);
             setToggle(false);
+            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
           }}
         >
           <FontAwesomeIcon icon={faSearch} className={styles.icon} />
@@ -104,6 +105,7 @@ const Index = () => {
                       localStorage.setItem('search', JSON.stringify(item));
                       setSearch(item);
                       setInput(item);
+                      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
                     }}
                   >
                     {item}
