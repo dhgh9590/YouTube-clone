@@ -2,7 +2,7 @@
 
 export const BASE_URL = 'https://youtube.googleapis.com';
 
-export const API_KEY = process.env.REACT_APP_API_KEY;
+export const API_KEY = 'AIzaSyBMfXHcrQEMtbJzWZV-_OWlIkAa7CWpmV0';
 
 export const USER_URL = {
   LOGIN: '/auth/signin',
