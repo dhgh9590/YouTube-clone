@@ -19,6 +19,10 @@ const Index = ({ onData }: IProps) => {
     setToggle(toggleValue);
   }, [toggleValue]);
 
+  useEffect(() => {
+    setToggle(false);
+  }, []);
+
   return (
     <nav
       ref={nav}

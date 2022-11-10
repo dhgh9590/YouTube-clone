@@ -43,6 +43,10 @@ const Index = () => {
     setSave(newGetSave);
   }, [search]);
 
+  useEffect(() => {
+    setToggle(false);
+  }, []);
+
   return (
     <div
       ref={nav}
