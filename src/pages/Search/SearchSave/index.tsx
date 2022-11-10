@@ -83,6 +83,7 @@ const Index = () => {
             e.preventDefault();
             localStorage.setItem('search', JSON.stringify(input));
             setSearch(input);
+            setToggle(false);
           }}
         >
           <FontAwesomeIcon icon={faSearch} className={styles.icon} />

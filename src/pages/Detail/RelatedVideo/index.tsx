@@ -77,6 +77,7 @@ const Index = ({ targetItem, setTargetItem }: IProps) => {
                 onClick={() => {
                   setTargetItem(item);
                   localStorage.setItem('target', JSON.stringify(item));
+                  window.scrollTo(0, 0);
                 }}
               >
                 <div className={styles.video}>

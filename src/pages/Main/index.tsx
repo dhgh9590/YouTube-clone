@@ -24,6 +24,10 @@ export const Main = () => {
     onData(10);
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>

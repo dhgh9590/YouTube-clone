@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './style.module.css';
 import Video from './Video';
 import RelatedVideo from './RelatedVideo';
@@ -8,6 +8,10 @@ export const Detail = () => {
   let target: any = localStorage.getItem('target');
   target = JSON.parse(target);
   const [targetItem, setTargetItem] = useState(target);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <section className={styles.container}>

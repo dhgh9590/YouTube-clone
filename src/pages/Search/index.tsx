@@ -75,6 +75,10 @@ export const Search = () => {
     }
   }, [search]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <section
       className={styles.section}
@@ -142,7 +146,7 @@ export const Search = () => {
                         alt=""
                       />
                     </div>
-                    <h2>{item.snippet.channelTitle}</h2>
+                    <h2>{item.snippet.title}</h2>
                     <em>{time && time[index]}</em>
                   </li>
                 );
