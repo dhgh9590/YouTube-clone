@@ -1,16 +1,24 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import styles from './style.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
 import { searchValue } from '../../../context/search';
+import { useNavigate } from 'react-router-dom';
+import { PATH } from '../../../constants/path';
+import usePopupClose from '../../../hooks/usePopupClose';
 
 const Index = () => {
-  const [toggle, setToggle] = useState(false); //메뉴바 토글
+  const [toggle, setToggle] = useState<any>(false); //메뉴바 토글
   const { search, setSearch } = useContext(searchValue); //검색어 저장
-  const [input, setInput] = useState<any>(); //현재 검색어 저장
+  const [input, setInput] = useState<any>(search); //현재 검색어 저장
   const [save, setSave] = useState<any[]>(); //검색어 기록 저장
+  const navigate = useNavigate();
+  const nav = useRef<any>(null);
+  const toggleValue = usePopupClose(nav);
 
-  console.log(search);
+  useEffect(() => {
+    setToggle(toggleValue);
+  }, [toggleValue]);
 
   //저장된 검색어 삭제
   const onDelete = (Titem: any) => {
@@ -36,7 +44,10 @@ const Index = () => {
   }, [search]);
 
   return (
-    <div className={`${styles.container} ${toggle == true && styles.active}`}>
+    <div
+      ref={nav}
+      className={`${styles.container} ${toggle == true && styles.active}`}
+    >
       <div
         className={`${styles.toggle}`}
         onClick={() => {
@@ -49,7 +60,12 @@ const Index = () => {
           <FontAwesomeIcon icon={faTimes} className={styles.close} />
         )}
       </div>
-      <div className={styles.logo}>
+      <div
+        className={styles.logo}
+        onClick={() => {
+          navigate(PATH.MAIN);
+        }}
+      >
         <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="" />
       </div>
       <form className={styles.form}>
@@ -57,6 +73,7 @@ const Index = () => {
           type="text"
           placeholder="Type here to search"
           defaultValue={search}
+          key={search}
           onChange={e => {
             setInput(e.target.value);
           }}
@@ -81,6 +98,7 @@ const Index = () => {
                     onClick={() => {
                       localStorage.setItem('search', JSON.stringify(item));
                       setSearch(item);
+                      setInput(item);
                     }}
                   >
                     {item}

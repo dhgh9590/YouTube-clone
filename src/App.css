@@ -3,7 +3,7 @@ body{font-family: 'Roboto', sans-serif;}
 sans-serif; */
 
 .swiper-button-prev{display: none;opacity: 0;}
-.swiper-button-next{width: 30px;height: 30px; right: 0px; background: url(../public/images/right.png) no-repeat center;}
+.swiper-button-next{width: 30px;height: 30px; right: -10px; background: url(../public/images/right.png) no-repeat center;}
 .swiper-button-next::after{content: '';}
 
 .swiper{}

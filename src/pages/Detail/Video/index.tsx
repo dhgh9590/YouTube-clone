@@ -59,6 +59,8 @@ const Index = ({ targetItem }: IProps) => {
           height="500px"
           src={src}
           frameBorder="0"
+          allowFullScreen={true}
+          allow="autoplay"
         ></iframe>
       </div>
       <div className={styles.video_info}>

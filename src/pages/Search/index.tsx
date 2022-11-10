@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import styles from './style.module.css';
 import SearchSave from './SearchSave';
 import { searchValue } from '../../context/search';
@@ -6,6 +6,7 @@ import axios from 'axios';
 import { API_KEY } from '../../constants/api';
 import { useNavigate } from 'react-router-dom';
 import { PATH } from '../../constants/path';
+import usePopupClose from '../../hooks/usePopupClose';
 
 export const Search = () => {
   let value: any = localStorage.getItem('search');
@@ -13,7 +14,11 @@ export const Search = () => {
   const { search, setSearch } = useContext(searchValue);
   const [data, setData] = useState<any[]>(); //아이템 저장
   const [time, setTime] = useState<any[]>(); //아이템 시간 저장
+  const filterList = useRef<any>(null);
+  const [filterText, setFilterText] = useState<any>('관련성'); //필터 텍스트 저장
+  const [filterToggle, setFilterToggle] = useState<any>(false); //필터 토글
   const navigate = useNavigate();
+  const filterType = usePopupClose(filterList);
 
   const onData = async () => {
     try {
@@ -33,6 +38,36 @@ export const Search = () => {
     }
   };
 
+  //최신순 정렬
+  const filter = () => {
+    const newData: any = data && [...data];
+    const filter =
+      newData &&
+      newData.sort((a: any, b: any) => {
+        return (
+          +new Date(b.snippet.publishTime) - +new Date(a.snippet.publishTime)
+        );
+      });
+
+    //시간 최신순 정렬
+    const newTime: any = time && [...time];
+    const filterTime =
+      newTime &&
+      newTime.sort((a: any, b: any) => {
+        return +new Date(b) - +new Date(a);
+      });
+
+    setData(filter);
+    setTime(filterTime);
+  };
+
+  //필터 텍스트 변경
+  const onChangeFilter = (e: any) => {
+    e.stopPropagation();
+    setFilterText(e.currentTarget.textContent);
+    setFilterToggle(false);
+  };
+
   useEffect(() => {
     setSearch(value);
     if (search) {
@@ -41,10 +76,48 @@ export const Search = () => {
   }, [search]);
 
   return (
-    <section className={styles.section}>
+    <section
+      className={styles.section}
+      onClick={() => {
+        setFilterToggle(filterType);
+      }}
+    >
       <div className={styles.container}>
         <SearchSave></SearchSave>
         <article className={styles.article}>
+          <div className={styles.filter}>
+            <div className={styles.filter_container} ref={filterList}>
+              <button>
+                <em
+                  onClick={() => {
+                    setFilterToggle(false);
+                  }}
+                >
+                  {filterText}
+                </em>
+              </button>
+              {filterToggle == true && (
+                <ul>
+                  <li
+                    onClick={e => {
+                      onData();
+                      onChangeFilter(e);
+                    }}
+                  >
+                    관련성
+                  </li>
+                  <li
+                    onClick={e => {
+                      filter();
+                      onChangeFilter(e);
+                    }}
+                  >
+                    최신순
+                  </li>
+                </ul>
+              )}
+            </div>
+          </div>
           <ul>
             {data &&
               data.map((item, index) => {

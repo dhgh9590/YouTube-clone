@@ -26,13 +26,15 @@
     position: relative;
 }
 
-.play_list ul li:hover {
-    transform: translateX(3px);
-}
 
 .play_list ul li .menu {
     font-size: 18px;
     color: #fff;
+}
+
+.play_list ul li:hover .menu {
+    transform: translateX(3px);
+    color: #ccc;
 }
 .play_list ul li .menu {
     font-size: 18px;

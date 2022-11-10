@@ -26,9 +26,7 @@
     position: relative;
 }
 
-.menu_list ul li:hover {
-    transform: translateX(3px);
-}
+.menu_list ul li.active::after{content: '';width: 2px;height: 80%;background: rgb(158, 0, 0); position: absolute; top: 50%;right: 0; transform: translateY(-50%);}
 
 .menu_list ul li .menu {
     font-size: 18px;
@@ -37,6 +35,7 @@
 }
 
 .menu_list ul li:hover .menu {
+    transform: translateX(3px);
     color: #ccc;
 }
 

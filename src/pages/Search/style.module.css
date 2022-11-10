@@ -2,14 +2,21 @@
 .container{width: 100%;height: 100%; min-height: 100vh; box-sizing: border-box; background: #18181d; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; display: flex;}
 
 .article{width: 100%;height: 100%; padding: 20px 10px; box-sizing: border-box;}
-.article ul{display: grid; grid-template-columns: repeat(7, minmax(150px,auto)); grid-gap: 20px;}
-.article ul li{width: 100%; height: 210px; cursor: pointer; border-radius: 10px;overflow: hidden; transition: all 0.2s;}
-.article ul li:hover{ box-shadow: rgba(0, 0, 0, 0.7) 0px 5px 15px;}
+.article > ul{display: grid; grid-template-columns: repeat(7, minmax(150px,auto)); grid-gap: 20px;}
+.article > ul > li{width: 100%; height: 210px; cursor: pointer; border-radius: 10px;overflow: hidden; transition: all 0.2s;}
+.article > ul > li:hover{ box-shadow: rgba(0, 0, 0, 0.7) 0px 5px 15px;}
 
-.article ul li .item_img{width: 100%;height: 150px;}
-.article ul li .item_img img{width: 100%;height: 100%;object-fit: cover;}
-.article ul li h2{ color: #fff; font-weight: 600;  padding: 0 5px; box-sizing: border-box; font-size: 14px; margin: 5px 0; overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;}
-.article ul li em{color: #ccc; font-size: 14px; padding: 0 5px; box-sizing: border-box;  overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;}
+.article > ul > li > .item_img{width: 100%;height: 150px;}
+.article > ul > li > .item_img img{width: 100%;height: 100%;object-fit: cover; border-radius: 10px;}
+.article > ul > li > h2{ color: #fff; font-weight: 600;  padding: 0 5px; box-sizing: border-box; font-size: 14px; margin: 5px 0; overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;}
+.article > ul > li > em{color: #ccc; font-size: 14px; padding: 0 5px; box-sizing: border-box;  overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;}
+
+/* 필터 */
+.filter{ margin-bottom: 20px; display: flex; flex-direction: column; align-items: flex-end; }
+.filter_container{width: 100px;height: 100%;  position: relative;}
+.filter button{width: 100%; padding: 5px 0; box-sizing: border-box; cursor: pointer; color: #fff; background: #222635;}
+.filter ul{width: 100%; background: #2E3245; position: absolute; top: 100%;right: 0; z-index: 1000;}
+.filter ul li{width: 100%; font-size: 12px; text-align: center;padding: 5px 4px; box-sizing: border-box; cursor: pointer; color: #fff;}
 
 
 @media (max-width : 1510px){

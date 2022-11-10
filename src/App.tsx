@@ -10,6 +10,7 @@ import { searchValue } from './context/search';
 
 function App() {
   const [search, setSearch] = useState(); //검색어 저장
+
   return (
     <div className="App">
       <searchValue.Provider value={{ search, setSearch }}>
