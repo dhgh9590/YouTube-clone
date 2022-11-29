@@ -16,6 +16,8 @@ interface IProps {
 
 const Index = ({ targetItem }: IProps) => {
   const [channel, setChannel] = useState<any>(); //채널정보
+  const [count, setCount] = useState<number | string>(); //구독자 수
+
   //채널 이미지
   const channelSrc =
     (channel &&
@@ -41,14 +43,23 @@ const Index = ({ targetItem }: IProps) => {
         `${BASE_URL}/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${id}&key=${API_KEY}`,
       );
       setChannel(res.data.items[0]);
+      handleFormatter(res.data.items[0].statistics.subscriberCount);
     } catch (error) {
       console.log(error);
     }
   };
 
+  const handleFormatter = (data: number) => {
+    const formatter = new Intl.NumberFormat(navigator.language, {
+      notation: 'compact',
+    });
+    const add = formatter.format(data);
+    setCount(add);
+  };
+
   useEffect(() => {
     onChannel(targetItem.snippet.channelId);
-  }, []);
+  }, [targetItem]);
 
   return (
     <article className={styles.container}>
@@ -71,9 +82,7 @@ const Index = ({ targetItem }: IProps) => {
             </div>
             <div className={styles.channel_text}>
               <h2>{channel && channel.snippet.title}</h2>
-              <em>
-                구독자 : {channel && channel.statistics.subscriberCount}명
-              </em>
+              <em>구독자 : {count && count}명</em>
             </div>
             <button>구독</button>
           </div>
