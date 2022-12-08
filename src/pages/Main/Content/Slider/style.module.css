@@ -6,6 +6,6 @@
 .slide{width: 150px;height: 180px; background: #fff; cursor: pointer; position: relative;}
 .slide img{width: 100%;height: 100%; object-fit: cover;}
 
-.slide_text{width: 100%;height: 50px; padding: 5px; box-sizing: border-box; position: absolute; bottom: 0;left: 0; background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px); }
-.slide_text h3{color: #fff; overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+.slide_text{width: 100%;  padding: 5px 10px; box-sizing: border-box; position: absolute; bottom: 0; left: 0; background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px); }
+.slide_text h3{word-break: break-all; color: #fff; overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
 

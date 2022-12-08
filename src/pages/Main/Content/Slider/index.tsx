@@ -13,8 +13,7 @@ const Index = ({ data, setTarget }: IProps) => {
   return (
     <div className={styles.slider_wrap}>
       <Swiper
-        slidesPerView={7}
-        spaceBetween={1}
+        slidesPerView={'auto'}
         slidesPerGroup={1}
         breakpoints={{
           200: {
