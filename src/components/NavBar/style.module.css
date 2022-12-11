@@ -1,4 +1,4 @@
-.nav{min-width: 330px;height: 100%; background: #18181d; position: relative;}
+.nav{width: 330px; min-width: 330px;height: 100%; background: #18181d; position: relative;}
 
 .logo{width: 100%;height: 150px; display: flex; justify-content: center; align-items: center; cursor: pointer;}
 .logo img{width: 185px;height: 75px;}
@@ -12,34 +12,14 @@
 }
 
 @media (max-width:920px) {
-    .nav {
-        position: fixed; z-index: 9999; transform: translateX(-300px); transition: all 0.4s;
-    }
+    .nav {position: fixed;top: 0; left: 0; z-index: 9999; transform: translateX(-330px); transition: all 0.6s;}
     .nav.active{ transform: translateX(0);}
     .logo {height: 80px;}
     .logo img {width: 125px;height: 50px; object-fit: cover;}
-    .toggle {
-        display: block;
-        width: 30px;
-        height: 30px;
-        background: #18181d;
-        position: absolute;
-        top: 0;
-        right: -30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
+    .toggle {display: block;width: 40px;height: 40px;background: #18181d;position: absolute;top: 0;left: 100%; display: flex;justify-content: center;align-items: center;cursor: pointer;}
+    .toggle .open {font-size: 20px;color: #fff;
     }
-
-    .toggle .open {
-        font-size: 20px;
-        color: #fff;
-    }
-    .toggle .close{
-        font-size: 20px;
-            color: #fff;
-    }
+    .toggle .close{font-size: 20px; color: #fff;}
 }
 
 /* 스크롤바 설정*/
